@@ -13,20 +13,6 @@ protected:
     std::string faculty;
 };
 
-class CollegeStudent : public Academics
-{
-public:
-    CollegeStudent(std::string nrp, std::string name,
-        std::string major, std::string faculty, Krs krs);
-
-    void print_krs();
-    std::string get_nrp();
-
-private:
-    std::string nrp;
-    Krs krs;
-};
-
 class Lecturer : public Academics
 {
 public:
@@ -34,17 +20,6 @@ public:
 
 private:
     std::string nidn;
-};
-
-class LecturerList
-{
-public:
-    LecturerList();
-    void add_lecturer(Lecturer lecturer);
-    void list_lecturer();
-
-private:
-    std::vector<Lecturer> lecturer_list;
 };
 
 class Course
@@ -71,4 +46,18 @@ public:
 private:
     std::vector<Course> course_list;
     int total_course, total_credit;
+};
+
+class CollegeStudent : public Academics
+{
+public:
+    CollegeStudent(std::string nrp, std::string name,
+        std::string major, std::string faculty, Krs krs);
+
+    void print_krs();
+    std::string get_nrp();
+
+private:
+    std::string nrp;
+    Krs krs;
 };

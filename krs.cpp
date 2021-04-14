@@ -43,11 +43,6 @@ Lecturer::Lecturer(std::string nidn, std::string name,
 {
 }
 
-void LecturerList::add_lecturer(Lecturer lecturer)
-{
-    lecturer_list.push_back(lecturer);
-}
-
 Course::Course(std::string course_code, std::string course_name,
     int credit, Lecturer lecturer)
     : course_code(course_code), course_name(course_name), credit(credit),
@@ -62,7 +57,11 @@ int Course::get_credit()
 
 void Course::print_course()
 {
-    std::cout << course_code << "-" << course_name << "-" << lecturer.get_name() << std::endl;
+    std::cout << "  *" << course_code << "-" << course_name << "-" << lecturer.get_name() << std::endl;
+}
+
+Krs::Krs()
+{
 }
 
 void Krs::add_course(Course course)
@@ -73,7 +72,7 @@ void Krs::add_course(Course course)
         total_course++;
 
         course_list.push_back(course);
-        std::cout << "Info   : Course addes successfully" << std::endl;
+        std::cout << "Info   : Course added successfully" << std::endl;
     }
     else {
         std::cout << "Info   : You reached credit limit" << std::endl;
