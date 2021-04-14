@@ -1,52 +1,86 @@
 #include <iostream>
 #include "krs.hpp"
 
-CollegeStudent::CollegeStudent(std::string w, std::string x, std::string y, std::string z) {
-    nrp     = w;
-    name    = x;
-    major   = y;
-    faculty = z;
+Academics::Academics(std::string name, std::string major, std::string faculty)
+    : name(name), major(major), faculty(faculty)
+{
 }
 
-void CollegeStudent::get_college_student(std::string nrp) {
+std::string Academics::get_name()
+{
+    return name;
+}
+
+CollegeStudent::CollegeStudent(std::string nrp, std::string name,
+    std::string major, std::string faculty, Krs krs)
+    : nrp(nrp), Academics(name, major, faculty), krs(krs)
+{
+}
+
+std::string CollegeStudent::get_nrp()
+{
+    return nrp;
+}
+
+void CollegeStudent::print_krs()
+{
     std::cout << "NRP      : " << nrp       << std::endl;
     std::cout << "Name     : " << name      << std::endl;
     std::cout << "Major    : " << major     << std::endl;
     std::cout << "Faculty  : " << faculty   << std::endl;
     std::cout << "Courses  : "              << std::endl;
+
+    auto course_list = krs.get_course_list();
+    for (auto course : course_list)
+    {
+        course.print_course();
+    }
 }
 
-Lecturer::Lecturer(std::string nidn, std::string name, std::string major, std::string faculty) {
-    this->nidn      = nidn;
-    this->name      = name;
-    this->major     = major;
-    this->faculty   = faculty;
+Lecturer::Lecturer(std::string nidn, std::string name,
+    std::string major, std::string faculty)
+    : nidn(nidn), Academics(name, major, faculty)
+{
 }
 
-void LecturerList::add_lecturer(Lecturer lecturer) {
-    this->lecturers_list.push_back(lecturer);
+void LecturerList::add_lecturer(Lecturer lecturer)
+{
+    lecturer_list.push_back(lecturer);
 }
 
-Course::Course(std::string course_code, std::string course_name, int sks, Lecturer lecturer) {
-    this->course_code = course_code;
-    this->course_name = course_name;
-    this->sks         = sks;
-    this->lecturer    = lecturer;   
+Course::Course(std::string course_code, std::string course_name,
+    int credit, Lecturer lecturer)
+    : course_code(course_code), course_name(course_name), credit(credit),
+        lecturer(lecturer)
+{   
 }
 
-void CourseList::add_course(Course course) {
-    this->courses_list.push_back(course);
+int Course::get_credit()
+{
+    return credit;
 }
 
-// void Krs::add_krs(Course c) {
-//     total_course += c.sks;
+void Course::print_course()
+{
+    std::cout << course_code << "-" << course_name << "-" << lecturer.get_name() << std::endl;
+}
 
-//     if (total_sks <= 24) {
-//         total_course++;
+void Krs::add_course(Course course)
+{
+    total_course += course.get_credit();
 
-//         std::cout << "Info " << nrp << "\t: Course addes successfully" << std::endl;
-//     }
-//     else {
-//         std::cout << "Info " << nrp << "\t: You reached credit limit" << std::endl;
-//     }
-// }
+    if (total_credit <= 24) {
+        total_course++;
+
+        course_list.push_back(course);
+        std::cout << "Info   : Course addes successfully" << std::endl;
+    }
+    else {
+        std::cout << "Info   : You reached credit limit" << std::endl;
+    }
+}
+
+std::vector<Course> Krs::get_course_list()
+{
+    return course_list;
+}

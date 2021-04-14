@@ -1,23 +1,34 @@
 #include <iostream>
 #include <vector>
 
-class Academics {
+class Academics
+{
 public:
+    Academics(std::string name, std::string major, std::string faculty);
+    std::string get_name();
+
+protected:
     std::string name;
     std::string major;
     std::string faculty;
 };
 
-class CollegeStudent : public Academics {
+class CollegeStudent : public Academics
+{
 public:
-    CollegeStudent(std::string nrp, std::string name, std::string major, std::string faculty);
-    void get_college_student(std::string nrp);
+    CollegeStudent(std::string nrp, std::string name,
+        std::string major, std::string faculty, Krs krs);
+
+    void print_krs();
+    std::string get_nrp();
 
 private:
     std::string nrp;
+    Krs krs;
 };
 
-class Lecturer : public Academics {
+class Lecturer : public Academics
+{
 public:
     Lecturer(std::string nidn, std::string name, std::string major, std::string faculty);
 
@@ -25,51 +36,39 @@ private:
     std::string nidn;
 };
 
-class LecturerList {
+class LecturerList
+{
 public:
     LecturerList();
     void add_lecturer(Lecturer lecturer);
     void list_lecturer();
 
 private:
-    std::vector<Lecturer> lecturers_list;
+    std::vector<Lecturer> lecturer_list;
 };
 
-class Course {
+class Course
+{
 public:
-    Course();
-    Course(std::string course_code, std::string course_name, int sks, Lecturer lecturer);
+    Course(std::string course_code, std::string course_name, int credit, Lecturer lecturer);
+    int get_credit();
+    void print_course();
 
 private:
-    int sks;
+    int credit;
     std::string course_code;
     std::string course_name;
     Lecturer lecturer;
 };
 
-class CourseList {
-public:
-    CourseList();
-    void add_course(Course course);
-
-private:
-    std::vector<Course> courses_list;
-};
-
-class Krs {
+class Krs
+{
 public:
     Krs();
-    void check_krs(CollegeStudent student, Course course);
+    void add_course(Course course);
+    std::vector<Course> get_course_list();
 
 private:
-    int total_course, total_sks;
-};
-
-class KrsList {
-public:
-    KrsList();
-    void add_krs(Course course);
-
-private:
-    std::vector<Course> course;
+    std::vector<Course> course_list;
+    int total_course, total_credit;
 };
