@@ -67,4 +67,24 @@ The input is either from user or program.
 3. **Method** `get_list_of_lecturer()`, `get_list_of_course()`, and `get_list_of_student()` to get array of object (public access specifier). Those three methods have return type `std::vector` with object data types.
 4. **Variables** `list_of_lecturer`, `list_of_course`, and `list_of_student` to store array of object with object data types.
 
-## Flow of Program (In General)
+## Program Flow (In General)
+At first, this program will display "WELCOME TO MINI INTEGRA" and next line is "Choose what you want to do" with 4 choices (A. Input, B. TakeCourse, C. GetOutput, D. FINISH). You should choose 1 of those 4 choices with input 'A'/'B'/'C'/'D'.
+
+If you input 'A' (it means that you want to input data to program) there will be display 3 choices (1. Lecturer, 2. Course, 3. Student)
+
+1. if you input 1, you should fill `nidn`, `name`, `major`, and `faculty` of lecturer. After that, the program will display the list of lecturer.
+2. if you input 2, you should fill `course_code`, `course_name`, `sks`, and `index_lecturer` of course. After that, the program will display the list of course.
+3. if you input 3, you should fill `nrp`, `name`, `major`, and `faculty` of student. After that, the program will display the list of student.
+4. if you input the other character, program will print "Your input is incorrect! Please try again!". And then you should input again correctly.
+
+if you input 'B' (it means that you want to take course), you should input the index_student and index_name. Be sure before you take course, you know the index of student and course. You also could check it in **C. GetOutput**.
+
+If you input 'C' (it means that you want to input data to program) there will be display 3 choices (1. Lecturer, 2. Course, 3. Student)
+
+1. if you input 1, the program will display the list of lecturer.
+2. if you input 2, the program will display the list of course.
+3. if you input 3, the program will display the list of student.
+4. if you input 4, you should input the index of student who wants to be printed. And then, the program will display the credit semester card of the student based of index that you input.
+5. if you input the other character, program will print "Your input is incorrect! Please try again!". And then you should input again correctly.
+
+if you input the other character, program will print "Your input is incorrect! Please try again!". And then you should input again correctly.
