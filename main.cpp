@@ -5,7 +5,7 @@ int main()
 {
     Campus *campus = new Campus();
     campus->add_lecturer(new Lecturer("123", "PakArun", "Informatika", "FTEIC"));
-    campus->add_course(new Course("27487", "Strukdat", 3, campus->get_list_of_lecturer()[0]));
+    campus->add_course(new Course("27487", "Strukdat", 3, campus->get_list_of_lecturers()[0]));
     campus->add_student(new CollegeStudent("781427", "Jayanti", "Informatika", "FTEIC"));
 
     std::cout << "WELCOME TO MINI INTEGRA\n" << std::endl;
@@ -47,7 +47,7 @@ int main()
 
                     int index_lecturer = 1;
                     std::cout << "----------------------------------------" << std::endl;
-                    for (auto lecturer : campus->get_list_of_lecturer()) 
+                    for (auto lecturer : campus->get_list_of_lecturers()) 
                     {
                         std::cout << index_lecturer << ". ";
                         index_lecturer++;
@@ -74,10 +74,10 @@ int main()
                     std::cin >> index_lecturer;
 
                     campus->add_course(new Course(course_code, course_name, sks,
-                        campus->get_list_of_lecturer()[index_lecturer]));
+                        campus->get_list_of_lecturers()[index_lecturer]));
                     
                     std::cout << "----------------------------------------" << std::endl;
-                    for (auto course : campus->get_list_of_course())
+                    for (auto course : campus->get_list_of_courses())
                     {
                         std::cout << index_course << ". ";
                         index_course++;
@@ -104,7 +104,7 @@ int main()
                     campus->add_student(new CollegeStudent(nrp, name, major, faculty));
 
                     std::cout << "----------------------------------------" << std::endl;
-                    for (auto student : campus->get_list_of_student())
+                    for (auto student : campus->get_list_of_students())
                     {
                         std::cout << index_student << ". ";
                         index_student++;
@@ -134,7 +134,7 @@ int main()
             std::cin >> index_course;
 
             std::cout << "----------------------------------------" << std::endl;
-            campus->get_list_of_student()[index_student]->take_course(campus->get_list_of_course()[index_course]);
+            campus->get_list_of_students()[index_student]->take_course(campus->get_list_of_courses()[index_course]);
             std::cout << "----------------------------------------" << std::endl;
         }
         else if (do_something ==  "C")
@@ -152,7 +152,7 @@ int main()
                 {
                     int index_lecturer = 1;
                     std::cout << "----------------------------------------" << std::endl;
-                    for (auto lecturer : campus->get_list_of_lecturer()) 
+                    for (auto lecturer : campus->get_list_of_lecturers()) 
                     {
                         std::cout << index_lecturer << ". ";
                         index_lecturer++;
@@ -166,7 +166,7 @@ int main()
                 {
                     int index_course = 1;
                     std::cout << "----------------------------------------" << std::endl;
-                    for (auto course : campus->get_list_of_course())
+                    for (auto course : campus->get_list_of_courses())
                     {
                         std::cout << index_course << ". ";
                         index_course++;
@@ -180,7 +180,7 @@ int main()
                 {
                     int index_student = 1;
                     std::cout << "----------------------------------------" << std::endl;
-                    for (auto student : campus->get_list_of_student())
+                    for (auto student : campus->get_list_of_students())
                     {
                         std::cout << index_student << ". ";
                         index_student++;
@@ -198,7 +198,7 @@ int main()
                     std::cin >> index_student;
 
                     std::cout << "----------------------------------------" << std::endl;
-                    campus->get_list_of_student()[index_student]->print_krs();
+                    campus->get_list_of_students()[index_student]->print_krs();
                     std::cout << "----------------------------------------" << std::endl;
 
                     break;

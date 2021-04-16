@@ -31,9 +31,9 @@ public:
     void print_course();
 
 private:
-    int credit;
     std::string course_code;
     std::string course_name;
+    int credit;
     Lecturer lecturer;
 };
 
@@ -73,12 +73,12 @@ public:
     void add_course(Course *course);
     void add_student(CollegeStudent *student);
 
-    std::vector<Lecturer *> get_list_of_lecturer();
-    std::vector<Course *> get_list_of_course();
-    std::vector<CollegeStudent *> get_list_of_student();
+    std::vector<Lecturer *> get_list_of_lecturers();
+    std::vector<Course *> get_list_of_courses();
+    std::vector<CollegeStudent *> get_list_of_students();
 
 private:
-    std::vector<Lecturer *> list_of_lecturer;
-    std::vector<Course *> list_of_course;
-    std::vector<CollegeStudent *> list_of_student;
+    std::vector<Lecturer *> list_of_lecturers;
+    std::vector<Course *> list_of_courses;
+    std::vector<CollegeStudent *> list_of_students;
 };

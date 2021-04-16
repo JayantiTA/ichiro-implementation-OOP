@@ -82,17 +82,17 @@ void Course::print_course()
 
 void Campus::add_lecturer(Lecturer *lecturer)
 {
-    list_of_lecturer.push_back(lecturer);
+    list_of_lecturers.push_back(lecturer);
 }
 
 void Campus::add_course(Course *course)
 {
-    list_of_course.push_back(course);
+    list_of_courses.push_back(course);
 }
 
 void Campus::add_student(CollegeStudent *student)
 {
-    list_of_student.push_back(student);
+    list_of_students.push_back(student);
 }
 
 Krs::Krs()
@@ -122,17 +122,17 @@ std::vector<Course *> Krs::get_course_taken()
     return course_taken;
 }
 
-std::vector<Lecturer *> Campus::get_list_of_lecturer()
+std::vector<Lecturer *> Campus::get_list_of_lecturers()
 {
-    return list_of_lecturer;
+    return list_of_lecturers;
 }
 
-std::vector<Course *> Campus::get_list_of_course()
+std::vector<Course *> Campus::get_list_of_courses()
 {
-    return list_of_course;
+    return list_of_courses;
 }
 
-std::vector<CollegeStudent *> Campus::get_list_of_student()
+std::vector<CollegeStudent *> Campus::get_list_of_students()
 {
-    return list_of_student;
+    return list_of_students;
 }
