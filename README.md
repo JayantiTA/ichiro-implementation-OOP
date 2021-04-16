@@ -47,8 +47,8 @@ The input is either from user or program.
 `class Krs` is a class to store credit semester card of student, that contains student's personal data and courses taken. This class consists of:
 1. **Constructor** (public access specifier) to allocate new object.
 2. **Method** `take_course(Course *course)` (public access specifier) without return type (`void`), to take a course and then stored in Krs object.
-3. **Vector** `get_course_taken()` (public access specifier) with object data type `<Course *>`, to return array of Course object that taken.
-4. **Vector** `course_taken()` (private access specifier) with object data type `<Course *>`, to store array of Course object that taken.
+3. **Method** `get_course_taken()` (public access specifier) with object data type `<Course *>`, to return array of Course object that taken.
+4. **Method** `course_taken()` (private access specifier) with object data type `<Course *>`, to store array of Course object that taken.
 5. **Variables** `total_course` and `total_credit` (private access specifier) with `int` data type (Private access specifier).
 
 ### class CollegeStudent
@@ -64,7 +64,7 @@ The input is either from user or program.
 `class Campus` is a class to store array of object: academics's data (student and lecturer) and course. This class consist of:
 1. **Constructer** (public access specifier) to allocate new object.
 2. **Method** `add_lecturer(Lecturer *lecturer)`, `add_course(Course *course)`, and `add_student(CollegeStudent *student)` to add new array of object with parameter pointer object data type  (public access specifier). Those three methods are `void` (without return type).
-3. **Method** `get_list_of_lecturer()`, `get_list_of_course()`, and `get_list_of_student()` to get array of object (public access specifier). Those three methods have return type `std::vector`.
-4. **Variables** `list_of_lecturer`, `list_of_course`, and `list_of_student` to store array of object with `std::vector` data types.
+3. **Method** `get_list_of_lecturer()`, `get_list_of_course()`, and `get_list_of_student()` to get array of object (public access specifier). Those three methods have return type `std::vector` with object data types.
+4. **Variables** `list_of_lecturer`, `list_of_course`, and `list_of_student` to store array of object with object data types.
 
 ## Flow of Program (In General)
