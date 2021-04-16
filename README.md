@@ -2,14 +2,14 @@
 This project was created to fulfill Ichiro's first internship assignment - Object Oriented Programming (OOP) Implementation.
 
 ## Indentity
-Name    : Jayanti Totti Andhina
-NRP     : 5025201037
-Major   : Informatics Engineering
+> Name    : Jayanti Totti Andhina
+> NRP     : 5025201037
+> Major   : Informatics Engineering
 
 ## OOP Implementation : Mini Integra
 
 ### General Explanation
-First of all, I called this program **Mini Integra** because this program works the same as **ITS's Integra System**, or more precisely **SI Akademik**. This program could be used to take credit semester before beginning of new semester. Program **Mini Integra** consists of 3 program files: `krs.hpp`, `krs.cpp`, and `main.cpp`. This program using 6 classes: `Academics`, `Lecturer`, `Course`, `Krs`, `CollegeStudent`, and `Campus`.
+First of all, I called this program **Mini Integra** because this program works the same as **ITS's Integra System**, or more precisely **SI Akademik**. This program could be used to take credit semester before beginning of new semester. Program **Mini Integra** consists of 3 program files: `krs.hpp`, `krs.cpp`, and `main.cpp`. This program uses 6 classes: `Academics`, `Lecturer`, `Course`, `Krs`, `CollegeStudent`, and `Campus`.
 
 ##### What are the features of **Mini Integra**?
 In this program, you could:
@@ -70,7 +70,8 @@ private:
     Krs *krs;
 ```
 #### class Campus
-```public:
+```
+public:
     Campus();
     void add_lecturer(Lecturer *lecturer);
     void add_course(Course *course);
