@@ -34,7 +34,7 @@ private:
     std::string course_code;
     std::string course_name;
     int credit;
-    Lecturer lecturer;
+    Lecturer *lecturer;
 };
 
 class Krs
@@ -42,6 +42,7 @@ class Krs
 public:
     Krs();
     void take_course(Course *course);
+    void remove_course(int index_to_course);
     std::vector<Course *> get_course_taken();
 
 private:
@@ -57,11 +58,13 @@ public:
 
     void print_student();
     void take_course(Course *course);
+    void remove_course(int index_to_remove);
     void print_krs();
     std::string get_nrp();
 
 private:
     std::string nrp;
+    int index_to_remove;
     Krs *krs;
 };
 

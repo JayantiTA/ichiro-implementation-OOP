@@ -1,13 +1,6 @@
 # Ichiro - OOP implementation
 This project was created to fulfill Ichiro's first internship assignment - Object Oriented Programming (OOP) Implementation.
 
-## Indentity
-Name    : Jayanti Totti Andhina
-
-NRP     : 5025201037
-
-Major   : Informatics Engineering
-
 ## OOP Implementation : Mini Integra
 
 ## General Explanation

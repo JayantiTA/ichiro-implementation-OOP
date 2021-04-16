@@ -47,6 +47,11 @@ void CollegeStudent::take_course(Course *course)
     krs->take_course(course); 
 }
 
+void CollegeStudent::remove_course(int index_to_remove)
+{
+    krs->remove_course(index_to_remove); 
+}
+
 void CollegeStudent::print_student()
 {
     std::cout << nrp << " - " << name << " - " << major << " - " << faculty << std::endl;
@@ -66,7 +71,7 @@ void Lecturer::print_lecturer()
 Course::Course(std::string course_code, std::string course_name,
     int credit, Lecturer *lecturer)
     : course_code(course_code), course_name(course_name), credit(credit),
-        lecturer(*lecturer)
+        lecturer(lecturer)
 {   
 }
 
@@ -77,7 +82,7 @@ int Course::get_credit()
 
 void Course::print_course()
 {
-    std::cout << course_code << " - " << course_name << " - " << lecturer.get_name() << std::endl;
+    std::cout << course_code << " - " << course_name << " - " << lecturer->get_name() << std::endl;
 }
 
 void Campus::add_lecturer(Lecturer *lecturer)
@@ -115,6 +120,11 @@ void Krs::take_course(Course *course)
     {
         std::cout << "Info   : You reached the credit limit" << std::endl;
     }
+}
+
+void Krs::remove_course(int index_to_remove)
+{
+    course_taken.erase(course_taken.begin() + index_to_remove);
 }
 
 std::vector<Course *> Krs::get_course_taken()
