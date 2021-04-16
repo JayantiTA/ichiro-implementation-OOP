@@ -46,14 +46,14 @@ int main()
                 campus->add_lecturer(new Lecturer(nidn, name, major, faculty));
 
                 int index_lecturer = 1;
-                std::cout << "--------------------------------" << std::endl;
+                std::cout << "----------------------------------------" << std::endl;
                 for (auto lecturer : campus->get_list_of_lecturer()) 
                 {
                     std::cout << index_lecturer << ". ";
                     index_lecturer++;
                     lecturer->print_lecturer();
                 }
-                std::cout << "--------------------------------" << std::endl;
+                std::cout << "----------------------------------------" << std::endl;
             }
             if (input == "2")
             {
@@ -74,14 +74,14 @@ int main()
                 campus->add_course(new Course(course_code, course_name, sks,
                     campus->get_list_of_lecturer()[index_lecturer]));
                 
-                std::cout << "--------------------------------" << std::endl;
+                std::cout << "----------------------------------------" << std::endl;
                 for (auto course : campus->get_list_of_course())
                 {
                     std::cout << index_course << ". ";
                     index_course++;
                     course->print_course();
                 }
-                std::cout << "--------------------------------" << std::endl;
+                std::cout << "----------------------------------------" << std::endl;
             }
             if (input == "3")
             {
@@ -99,14 +99,14 @@ int main()
 
                 campus->add_student(new CollegeStudent(nrp, name, major, faculty));
 
-                std::cout << "--------------------------------" << std::endl;
+                std::cout << "----------------------------------------" << std::endl;
                 for (auto student : campus->get_list_of_student())
                 {
                     std::cout << index_student << ". ";
                     index_student++;
                     student->print_student();
                 }
-                std::cout << "--------------------------------" << std::endl;
+                std::cout << "----------------------------------------" << std::endl;
             }
         }
         if (do_something == "B")
@@ -118,9 +118,9 @@ int main()
             std::cout << "Index of course: ";
             std::cin >> index_course;
 
-            std::cout << "--------------------------------" << std::endl;
+            std::cout << "----------------------------------------" << std::endl;
             campus->get_list_of_student()[index_student]->take_course(campus->get_list_of_course()[index_course]);
-            std::cout << "--------------------------------" << std::endl;
+            std::cout << "----------------------------------------" << std::endl;
         }
         if (do_something ==  "C")
         {
@@ -129,9 +129,9 @@ int main()
             std::cout << "Index of student: ";
             std::cin >> index_student;
 
-            std::cout << "--------------------------------" << std::endl;
+            std::cout << "----------------------------------------" << std::endl;
             campus->get_list_of_student()[index_student]->print_krs();
-            std::cout << "--------------------------------" << std::endl;
+            std::cout << "----------------------------------------" << std::endl;
         }
 
         std::cout << "\nChoose what you want to do?" << std::endl;
